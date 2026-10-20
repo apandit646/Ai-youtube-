@@ -1,0 +1,72 @@
+name: rhymepilot
+
+x-backend: &backend
+  build:
+    context: ./backend
+    args:
+      INSTALL_DEV: ${INSTALL_DEV:-false}
+  image: rhymepilot-backend:latest
+  env_file: .env
+  environment:
+    DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-rhymepilot}:${POSTGRES_PASSWORD:-rhymepilot}@db:5432/${POSTGRES_DB:-rhymepilot}
+    MEDIA_ROOT: /data/media
+  volumes:
+    - media:/data/media
+  depends_on:
+    db:
+      condition: service_healthy
+  restart: unless-stopped
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-rhymepilot}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rhymepilot}
+      POSTGRES_DB: ${POSTGRES_DB:-rhymepilot}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    <<: *backend
+    command: ["api"]
+    ports:
+      - "${API_PORT:-8000}:8000"
+
+  worker:
+    <<: *backend
+    command: ["worker"]
+    depends_on:
+      db:
+        condition: service_healthy
+      api:
+        condition: service_healthy  # api runs the migrations first
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import datetime as d,pathlib as p;t=d.datetime.fromisoformat(p.Path('/data/media/.worker-heartbeat').read_text());exit(0 if (d.datetime.now(d.UTC)-t).total_seconds()<120 else 1)\""]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+    image: rhymepilot-frontend:latest
+    environment:
+      API_UPSTREAM: http://api:8000
+    ports:
+      - "${FRONTEND_PORT:-8080}:8080"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  media:

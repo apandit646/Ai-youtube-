@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Gol Gol Laddoo Ginti",
+    "topic": "Counting sweets with grandma",
+    "theme": "numbers",
+    "language": "hi",
+    "target_age_range": "2-5",
+    "objective": "Count from one to five using festive sweets",
+    "story_concept": "Dadi makes laddoos and the child counts each one as it lands on the plate.",
+    "lyrics": [
+      "दादी बनाए गोल-गोल लड्डू,",
+      "थाली में रखे एक, ओ मेरे बड्डू!",
+      "एक, दो, तीन, चलो गिनें हम,",
+      "मीठे-मीठे लड्डू, खुशियाँ हरदम!",
+      "चार आए, पाँच आए,",
+      "सबने मिलकर ताली बजाए!"
+    ],
+    "storyboard": [
+      {"description": "Grandma's kitchen, a plate appears", "lyric_lines": ["दादी बनाए गोल-गोल लड्डू,", "थाली में रखे एक, ओ मेरे बड्डू!"], "duration_seconds": 7, "background": "classroom", "characters": ["child"], "objects": ["number:1", "shape:circle"], "mood": "happy"},
+      {"description": "Laddoos pop onto the plate one by one", "lyric_lines": ["एक, दो, तीन, चलो गिनें हम,", "मीठे-मीठे लड्डू, खुशियाँ हरदम!"], "duration_seconds": 8, "background": "garden", "characters": ["child", "cat"], "objects": ["number:3", "shape:circle", "shape:circle", "shape:circle"], "mood": "playful"},
+      {"description": "Five laddoos and everyone claps", "lyric_lines": ["चार आए, पाँच आए,", "सबने मिलकर ताली बजाए!"], "duration_seconds": 7, "background": "meadow", "characters": ["child", "bird"], "objects": ["number:5", "balloon"], "mood": "happy"}
+    ],
+    "suggested_duration_seconds": 22,
+    "aspect_ratio": "9:16",
+    "audio_instructions": "Warm, slow narration; pause after each number so children can repeat.",
+    "metadata": {
+      "title": "Gol Gol Laddoo | Hindi Counting Song for Kids",
+      "description": "दादी के लड्डुओं के साथ एक से पाँच तक गिनती सीखें! An original Hindi counting rhyme for toddlers.",
+      "hashtags": ["#HindiRhymes", "#Counting", "#Balgeet"],
+      "keywords": ["hindi counting song", "ginti", "laddoo", "toddler numbers"],
+      "thumbnail_text": "गिनती लड्डू",
+      "thumbnail_design": "Smiling child holding a plate with five round sweets, big yellow Hindi text"
+    },
+    "safety_flags": [],
+    "originality_notes": "Original lyrics and concept; no existing rhyme melody or text referenced."
+  },
+  {
+    "title": "The Puddle Parade",
+    "topic": "Rainy day colours",
+    "theme": "colors",
+    "language": "en",
+    "target_age_range": "2-5",
+    "objective": "Name four colours through rainy-day objects",
+    "story_concept": "A duck leads a parade of coloured umbrellas and boots through puddles.",
+    "lyrics": [
+      "Splash, splash, here comes the rain,",
+      "Red boots marching down the lane!",
+      "Blue umbrella, round and wide,",
+      "Yellow duck goes for a ride!",
+      "Green leaves dripping, drip, drop, drip,",
+      "Puddle parade, hip hip hip!"
+    ],
+    "storyboard": [
+      {"description": "Rain begins, red boots march", "lyric_lines": ["Splash, splash, here comes the rain,", "Red boots marching down the lane!"], "duration_seconds": 7, "background": "meadow", "characters": ["child"], "objects": ["cloud", "color:red"], "mood": "playful"},
+      {"description": "Blue umbrella and a yellow duck", "lyric_lines": ["Blue umbrella, round and wide,", "Yellow duck goes for a ride!"], "duration_seconds": 7, "background": "ocean", "characters": ["duck"], "objects": ["color:blue", "color:yellow"], "mood": "happy"},
+      {"description": "Green leaves and a parade finish", "lyric_lines": ["Green leaves dripping, drip, drop, drip,", "Puddle parade, hip hip hip!"], "duration_seconds": 7, "background": "forest", "characters": ["child", "frog"], "objects": ["color:green", "rainbow"], "mood": "happy"}
+    ],
+    "suggested_duration_seconds": 21,
+    "aspect_ratio": "9:16",
+    "audio_instructions": "Bouncy tempo; emphasise each colour word.",
+    "metadata": {
+      "title": "The Puddle Parade | Rainy Day Colours Song",
+      "description": "Splash through puddles and learn red, blue, yellow and green in this original sing-along for little learners.",
+      "hashtags": ["#KidsSongs", "#LearnColors"],
+      "keywords": ["colors song", "rain song for kids", "toddler learning"],
+      "thumbnail_text": "Puddle Parade",
+      "thumbnail_design": "Yellow duck in a puddle under a rainbow"
+    },
+    "safety_flags": [],
+    "originality_notes": "Original lyrics; avoids the traditional 'rain rain go away' phrasing."
+  }
+]
