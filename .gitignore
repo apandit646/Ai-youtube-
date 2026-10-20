@@ -1,0 +1,25 @@
+# Secrets
+.env
+.env.*
+!.env.example
+client_secret*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+*.db
+
+# Node
+node_modules/
+frontend/dist/
+
+# Generated media and local data
+media/
+backend/media/
+backups/
+*.log
+.DS_Store
